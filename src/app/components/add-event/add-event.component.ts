@@ -20,7 +20,7 @@ export class AddEventComponent implements OnInit {
   }
 
   processForm() {
-    if (this.event.eventId= undefined) {
+    if (this.event.eventId==undefined) {
             this.eventService.createEvent(this.event).subscribe(() => {
         console.log(this.event);
         this.router.navigate(['/']);

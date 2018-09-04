@@ -13,19 +13,19 @@ public event = new Event();
   constructor(private http:HttpClient) { }
 
   getEvents() {
-    return this.http.get(this.baseUrl + '/events');
+    return this.http.get(this.baseUrl + 'events');
   }
 
   deleteEvent(id: number) {
-    return this.http.delete(this.baseUrl + '/events/' + id);
+    return this.http.delete(this.baseUrl + 'events/' + id);
   }
 
   createEvent(event: Event):Observable<Event> {
-    return this.http.post<Event>(this.baseUrl + '/saveEvent', event);
+    return this.http.post<Event>(this.baseUrl + 'saveEvent', event);
   }
 
   updateEvent(event: Event){
-    return this.http.put(this.baseUrl + '/updateEvent', event);
+    return this.http.put(this.baseUrl + 'updateEvent', event);
   }
 
   setter(event: Event) {
