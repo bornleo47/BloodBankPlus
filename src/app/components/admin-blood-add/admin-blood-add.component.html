@@ -29,7 +29,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label control-label">Blood Type</label>
                                     <div class="col-lg-9">
-                                        <select id="bloodtype text-danger" required class="form-control" size="0" name="bloodtype" [(ngModel)]="bloodtype" #typeControl="ngModel">
+                                        <select id="bloodtype text-danger" required class="form-control" size="0" name="bloodtype" [(ngModel)]="bloodtype" [ngClass]="{'is-invalid':typeControl.errors && typeControl.touched}" #typeControl="ngModel">
                                             <option value="A+">A+</option>
                                             <option value="B+">B+</option>
                                         </select>
@@ -39,20 +39,20 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row has-error" [class.has-error]="pintControl.invalid && pintControl.touched">
+                                <div class="form-group row">
                                     <label class="col-lg-3 col-form-label control-label" for="pint">Pint</label>
                                     <div class="col-lg-9">
-                                        <input required class="form-control" type="number" name="pint" [(ngModel)]="pint" #pintControl="ngModel">
+                                        <input required class="form-control" type="number" name="pint" [(ngModel)]="pint" [ngClass]="{'is-invalid':pintControl.errors && pintControl.touched}" #pintControl="ngModel">
                                         <span class="help-block text-danger" *ngIf="pintControl.invalid && pintControl.touched">
                                           Pint is required!!
                                         </span>
                                       </div>
                                 </div>
 
-                                <div class="form-group row has-error" [class.has-error]="donorControl.invalid && donorControl.touched">
+                                <div class="form-group row">
                                     <label class="col-lg-3 col-form-label control-label" for="donor">Donor's Name</label>
                                     <div class="col-lg-9">
-                                        <input required maxlength="40" class="form-control" type="text" name="donor" [(ngModel)]="donor" #donorControl="ngModel">
+                                        <input required maxlength="40" class="form-control" type="text" name="donor" [(ngModel)]="donor" [ngClass]="{'is-invalid':donorControl.errors && donorControl.touched}" #donorControl="ngModel">
                                         <div class="help-block text-danger" *ngIf="donorControl.invalid && donorControl.touched">
                                           Donor's Name is required!!
                                         </div>
@@ -62,7 +62,7 @@
                                 <div class="form-group row">
                                     
                                     <div class="col-lg-9">
-                                        <input required class="form-control" type="hidden" name="entryDate" [(ngModel)]="entryDate">
+                                        <input class="form-control" type="hidden" name="entryDate" [(ngModel)]="entryDate">
                                     </div>
                                 </div>
 
