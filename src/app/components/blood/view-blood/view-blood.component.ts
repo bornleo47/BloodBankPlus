@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BloodRecord } from '../../../models/BloodRecord';
+import {BloodService} from '../../../services/bloodService/blood.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-blood',
@@ -7,9 +10,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewBloodComponent implements OnInit {
 
-  constructor() { }
+  private bloodRecords: BloodRecord[];
+
+  constructor(private bloodService: BloodService, private router: Router) { }
+
 
   ngOnInit() {
+    this.bloodService.getRecords().subscribe((bloodRecords: any) => {
+      console.log(bloodRecords);
+      this.bloodRecords = bloodRecords;
+    }, (error) => {
+      console.log(error);
+    })
+ 
   }
 
+  deleteRecord(record) {
+    this.bloodService.deleteRecord(record.bloodRecordId).subscribe(() => {
+      this.bloodRecords.splice(this.bloodRecords.indexOf(record), 1);
+    }, (error) => {
+      console.log(error);
+
+    });
+  }
+
+
+  updateRecord(event) {
+    this.bloodService.setter(event);
+    this.router.navigate(['/addblood']);
+  }
+
+  newRecord() {
+    let record = new BloodRecord();
+    this.bloodService.setter(record);
+    this.router.navigate(['/addblood']);
+
+  }
 }
