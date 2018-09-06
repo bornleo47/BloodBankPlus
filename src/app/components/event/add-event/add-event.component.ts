@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Event} from '../../models/Event'
-import { EventService } from '../../services/eventService/event.service';
+import {Event} from '../../../models/Event'
+import { EventService } from '../../../services/eventService/event.service';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
@@ -23,14 +23,14 @@ export class AddEventComponent implements OnInit {
     if (this.event.eventId==undefined) {
             this.eventService.createEvent(this.event).subscribe(() => {
         console.log(this.event);
-        this.router.navigate(['/']);
+        this.router.navigate(['/events']);
       }, (error) => {
         console.log(error);
       });
     } else {
       this.eventService.updateEvent(this.event).subscribe((event) => {
         console.log(event);
-        this.router.navigate(['/']);
+        this.router.navigate(['/events']);
       }, (error) => {
         console.log(error);
       });

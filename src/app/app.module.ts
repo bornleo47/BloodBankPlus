@@ -9,9 +9,9 @@ import { AdminBloodAddComponent } from './components/admin-blood-add/admin-blood
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AddUserComponent } from './components/add-user/add-user.component';
-import { AddEventComponent } from './components/add-event/add-event.component';
-import { DateComponent } from './date/date.component';
+import { AddEventComponent } from './components/event/add-event/add-event.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ViewEventComponent } from './components/event/view-event/view-event.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
     AdminBloodAddComponent,
     AddUserComponent,
     AddEventComponent,
-    DateComponent
+    ViewEventComponent
+   
   ],
   imports: [
     BrowserModule,
