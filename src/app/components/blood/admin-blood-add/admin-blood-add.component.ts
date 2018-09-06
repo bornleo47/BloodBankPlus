@@ -33,14 +33,14 @@ export class AdminBloodAddComponent implements OnInit {
 
   bloodForm() {
     if (this.bloodRecord.bloodRecordId == undefined) {
-     this.bloodRecord.bloodGroupId= this.selectedType;
-      this.bloodService.createRecord(this.bloodRecord).subscribe(() => {
+    this.bloodRecord.bloodGroupId= this.selectedType;
+    this.bloodService.createRecord(this.bloodRecord).subscribe(() => {
         console.log(this.bloodRecord);
-        this.router.navigate(['bloodDetails']);
+      //  this.router.navigate(['bloodDetails']);
        }, 
-       (error) => {
+      (error) => {
        console.log(error);
-       })
+     })
 
     } else {
       this.bloodService.updateRecord(this.bloodRecord)

@@ -59,7 +59,7 @@
                         <div class="form-group row has-error">
                             <label class="col-lg-3 col-form-label control-label">Donor's Contact Number:</label>
                             <div class="col-lg-9">
-                                <input required maxlength="40" class="form-control" type="text" name="donorPhone" [(ngModel)]="bloodRecord.donorPhone" #dControl="ngModel">
+                                <input required maxlength="40" class="form-control" type="number" name="donorPhone" [(ngModel)]="bloodRecord.donorPhone" #dControl="ngModel">
                                 <div class="help-block text-danger" *ngIf="dControl.invalid && dControl.touched">
                                     Donor's Contact Number is required!!
                                 </div>

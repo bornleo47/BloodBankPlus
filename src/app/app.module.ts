@@ -12,6 +12,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { AddEventComponent } from './components/event/add-event/add-event.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ViewEventComponent } from './components/event/view-event/view-event.component';
+import { ViewBloodComponent } from './components/blood/view-blood/view-blood.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ViewEventComponent } from './components/event/view-event/view-event.com
     AdminBloodAddComponent,
     AddUserComponent,
     AddEventComponent,
-    ViewEventComponent
+    ViewEventComponent,
+    ViewBloodComponent
    
   ],
   imports: [
