@@ -6,13 +6,18 @@ import { AddUserComponent } from './components/user/add-user/add-user.component'
 import { AddEventComponent } from './components/event/add-event/add-event.component';
 import { ViewEventComponent } from './components/event/view-event/view-event.component';
 import { ViewBloodComponent } from './components/blood/view-blood/view-blood.component';
+import { ViewUserComponent } from './components/user/view-user/view-user.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  {path: '', redirectTo:"/home", pathMatch:'full'},
   {path: 'addblood', component: AdminBloodAddComponent},
   {path: 'adduser', component: AddUserComponent},
   {path: 'events', component: ViewEventComponent},
   {path: 'records', component: ViewBloodComponent},
-  {path: 'addevent', component: AddEventComponent}
+  {path: 'users', component: ViewUserComponent},
+  {path: 'addevent', component: AddEventComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({

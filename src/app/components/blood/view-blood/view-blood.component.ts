@@ -35,8 +35,8 @@ export class ViewBloodComponent implements OnInit {
   }
 
 
-  updateRecord(event) {
-    this.bloodService.setter(event);
+  updateRecord(record) {
+    this.bloodService.setter(record);
     this.router.navigate(['/addblood']);
   }
 

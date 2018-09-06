@@ -47,7 +47,7 @@ export class AdminBloodAddComponent implements OnInit {
       this.bloodService.updateRecord(this.bloodRecord)
       .subscribe((bloodRecord) => {
         console.log(bloodRecord);
-        this.router.navigate(['/addblood']);
+        this.router.navigate(['records']);
       }, (error) => {
         console.log(error);
       });

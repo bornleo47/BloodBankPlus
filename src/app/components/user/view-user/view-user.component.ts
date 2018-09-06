@@ -22,7 +22,6 @@ export class ViewUserComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
- 
   }
 
   deleteRecord(user) {
@@ -35,17 +34,17 @@ export class ViewUserComponent implements OnInit {
   }
 
 
-  updateRecord(user) {
-    this.userService.setter(user);
-    this.router.navigate(['/addblood']);
-  }
+  // updateRecord(user) {
+  //   this.userService.setter(user);
+  //   this.router.navigate(['#']);
+  // }
 
-  newRecord() {
-    let user = new User();
-    this.userService.setter(user);
-    this.router.navigate(['/addblood']);
+  // newRecord() {
+  //   let user = new User();
+  //   this.userService.setter(user);
+  //   this.router.navigate(['#']);
 
-  }
+  // }
 }
 
 
