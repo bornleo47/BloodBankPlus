@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminBloodAddComponent } from './components/blood/admin-blood-add/admin-blood-add.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
+import { AddUserComponent } from './components/user/add-user/add-user.component';
 import { AddEventComponent } from './components/event/add-event/add-event.component';
 import { ViewEventComponent } from './components/event/view-event/view-event.component';
 import { ViewBloodComponent } from './components/blood/view-blood/view-blood.component';

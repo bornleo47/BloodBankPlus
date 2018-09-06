@@ -8,11 +8,12 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
 import { AdminBloodAddComponent } from './components/blood/admin-blood-add/admin-blood-add.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { AddUserComponent } from './components/add-user/add-user.component';
+import { AddUserComponent } from './components/user/add-user/add-user.component';
 import { AddEventComponent } from './components/event/add-event/add-event.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ViewEventComponent } from './components/event/view-event/view-event.component';
 import { ViewBloodComponent } from './components/blood/view-blood/view-blood.component';
+import { ViewUserComponent } from './components/user/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ViewBloodComponent } from './components/blood/view-blood/view-blood.com
     AddUserComponent,
     AddEventComponent,
     ViewEventComponent,
-    ViewBloodComponent
+    ViewBloodComponent,
+    ViewUserComponent
    
   ],
   imports: [
