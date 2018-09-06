@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
-import { AdminBloodAddComponent } from './components/admin-blood-add/admin-blood-add.component';
+import { AdminBloodAddComponent } from './components/blood/admin-blood-add/admin-blood-add.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AddUserComponent } from './components/add-user/add-user.component';
