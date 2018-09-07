@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../../services/eventService/event.service';
 import { Router } from '@angular/router';
-import {Event} from '../../../models/Event';
+import { Event } from '../../../models/Event';
 
 
 @Component({
@@ -14,7 +14,6 @@ export class ViewEventComponent implements OnInit {
 
   constructor(private eventService: EventService, private router: Router) { }
 
-
   ngOnInit() {
     this.eventService.getEvents().subscribe((events: any) => {
       console.log(events);
@@ -22,7 +21,6 @@ export class ViewEventComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
- 
   }
 
   deleteEvent(event) {
@@ -33,7 +31,6 @@ export class ViewEventComponent implements OnInit {
     });
   }
 
-
   updateEvent(event) {
     this.eventService.setter(event);
     this.router.navigate(['/addevent']);
@@ -43,9 +40,5 @@ export class ViewEventComponent implements OnInit {
     let event = new Event();
     this.eventService.setter(event);
     this.router.navigate(['/addevent']);
-
   }
-
-
-  
 }

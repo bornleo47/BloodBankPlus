@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BloodGroup} from '../../../models/BloodGroup';
-import {SharedService} from '../../../services/shared/shared.service';
+import { BloodGroup } from '../../../models/BloodGroup';
+import { SharedService } from '../../../services/shared/shared.service';
 
 
 import { Router } from '@angular/router';
@@ -20,43 +20,37 @@ export class AdminBloodAddComponent implements OnInit {
 
   ngOnInit() {
 
-    this.bloodRecord= this.bloodService.getter();
+    this.bloodRecord = this.bloodService.getter();
 
     this.sharedService.getBloodGroup()
       .subscribe((res) => {
         console.log(res);
         this.bloodGroup = res;
-        this.bloodRecord.BloodGroupId =this.bloodGroup.bloodGroupId;
+        this.bloodRecord.BloodGroupId = this.bloodGroup.bloodGroupId;
       }
       )
   }
 
   bloodForm() {
     if (this.bloodRecord.bloodRecordId == undefined) {
-    this.bloodRecord.bloodGroupId= this.selectedType;
-    this.bloodService.createRecord(this.bloodRecord).subscribe(() => {
+      this.bloodRecord.bloodGroupId = this.selectedType;
+      this.bloodService.createRecord(this.bloodRecord).subscribe(() => {
         console.log(this.bloodRecord);
-      this.router.navigate(['records']);
-       }, 
-      (error) => {
-       console.log(error);
-     })
+        this.router.navigate(['records']);
+      },
+        (error) => {
+          console.log(error);
+        })
 
     } else {
-      this.bloodRecord.bloodGroup.bloodGroupId= this.selectedType;
+      this.bloodRecord.bloodGroup.bloodGroupId = this.selectedType;
       this.bloodService.updateRecord(this.bloodRecord)
-      .subscribe((bloodRecord) => {
-        console.log(bloodRecord);
-        this.router.navigate(['records']);
-      }, (error) => {
-        console.log(error);
-      });
+        .subscribe((bloodRecord) => {
+          console.log(bloodRecord);
+          this.router.navigate(['records']);
+        }, (error) => {
+          console.log(error);
+        });
     }
   }
-
-
-
-
-
-
 }

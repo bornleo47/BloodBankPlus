@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BloodRecord } from '../../../models/BloodRecord';
-import {BloodService} from '../../../services/bloodService/blood.service';
+import { BloodService } from '../../../services/bloodService/blood.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,6 @@ export class ViewBloodComponent implements OnInit {
 
   constructor(private bloodService: BloodService, private router: Router) { }
 
-
   ngOnInit() {
     this.bloodService.getRecords().subscribe((bloodRecords: any) => {
       console.log(bloodRecords);
@@ -22,7 +21,6 @@ export class ViewBloodComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
- 
   }
 
   deleteRecord(record) {
